@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <meta name="theme-color" content="#06140c">
+  <title>Ilhas BR · EBAT — Realidade Aumentada</title>
+  <meta name="description" content="Experiência de realidade aumentada da EBAT: ilhas flutuantes que você encontra, aproxima e segura com as mãos.">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!--
+    Bibliotecas carregadas por CDN com versão fixa.
+    Para rodar 100% offline (ex.: evento com internet ruim), execute scripts/vendor.sh:
+    ele baixa os arquivos para a pasta vendor/ e troca estes endereços pelos locais.
+  -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+      "@mediapipe/tasks-vision": "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.18/vision_bundle.mjs"
+    }
+  }
+  </script>
+</head>
+<body>
+  <video id="video" playsinline muted autoplay></video>
+  <canvas id="scene"></canvas>
+
+  <!-- Tudo que fica por cima da cena (também usado como dom-overlay no WebXR) -->
+  <div id="hud" hidden>
+    <div class="top">
+      <div id="status" class="pill">Preparando…</div>
+      <div id="discover" class="pill">Ilhas encontradas: 0</div>
+    </div>
+
+    <div id="toast" class="toast" aria-live="polite"></div>
+
+    <div id="hint" class="hint" hidden>Toque ou clique na ilha para saber mais</div>
+
+    <aside id="info" class="info" hidden role="dialog" aria-labelledby="info-title">
+      <div class="info-card">
+        <p class="info-kicker">Tema</p>
+        <h2 id="info-title"></h2>
+        <p id="info-text"></p>
+        <p class="info-ex"><b>Exemplo:</b> <span id="info-ex"></span></p>
+        <button id="info-close" class="primary">Fechar</button>
+      </div>
+    </aside>
+
+    <div class="side">
+      <button id="btn-fwd"  class="round" aria-label="Avançar">▲</button>
+      <button id="btn-back" class="round" aria-label="Recuar">▼</button>
+    </div>
+
+    <div class="bottom">
+      <button id="btn-recenter" class="chip">Recentralizar</button>
+      <button id="btn-exit" class="chip">Sair</button>
+    </div>
+    <div id="cursors"></div>
+  </div>
+
+  <main id="start">
+    <div class="card">
+      <p class="eyebrow">EBAT · Escola Brasileira de Arte e Tecnologia</p>
+      <h1>Ilhas BR</h1>
+      <p class="lead">
+        Um arquipélago flutuante ao seu redor. Mova a câmera para encontrar as ilhas,
+        chegue perto de cada símbolo para descobrir um tema da arte e da tecnologia e segure as ilhas com as mãos.
+      </p>
+
+      <div class="actions">
+        <button id="btn-xr" class="primary" hidden>Entrar em AR (modo completo)</button>
+        <button id="btn-cam" class="primary">Iniciar com a câmera</button>
+      </div>
+
+      <ul class="tips">
+        <li><b>Girar o celular</b> revela as ilhas ao redor.</li>
+        <li><b>Botões ▲ ▼</b> (ou andar, no modo completo) aproximam e afastam.</li>
+        <li><b>Chegue perto</b> de uma ilha com símbolo e <b>toque</b> nela para ler sobre o tema.</li>
+        <li><b>Pinça</b> (polegar + indicador) segura a ilha; uma pinça rápida abre a explicação. No celular, também vale tocar e arrastar.</li>
+      </ul>
+
+      <!-- EDITE o texto de crédito conforme o contrato de patrocínio -->
+      <p class="credit">Realização EBAT · Patrocínio Petrobras · Lei de Incentivo à Cultura</p>
+    </div>
+  </main>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
