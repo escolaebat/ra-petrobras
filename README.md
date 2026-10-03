@@ -7,10 +7,12 @@ Experiência de realidade aumentada que roda **no navegador do celular** (sem in
 - **Ilha central (Petrobras):** maior e mais volumosa, com o logo em 3D, iluminado e flutuando. É fixa.
 - **Cinco ilhas de tema**, cada uma com um símbolo 3D: Inteligência Artificial, Programação Criativa, Eletrônica Criativa, Arte Interativa e Audiovisual Expandido.
 - **Ilhas extras** com símbolos de arte e tecnologia. Ao todo são 14 ilhas **distribuídas em 360°**: aparecem em todo o redor, inclusive atrás de você.
-- **Andar para se aproximar:** no AR completo (Android/Chrome) você caminha de verdade; no modo câmera, cada passo detectado pelo celular avança ~65 cm (botão "Passos" liga/desliga; ▲ ▼ também funcionam). Aproximar faz a ilha crescer.
+- **Ilha da Petrobras inteira na tela:** a distância da ilha central é calculada pelo formato da tela (celular em pé fica mais longe que computador), então ela abre centralizada e sem cortes.
+- **Observar ao redor:** o logo 3D não fica mais preso ao olhar: acompanha você até ~55° e, passando disso, você o vê de lado e por trás. Dá para dar a volta na ilha (botões ◀ ▶, teclas W A S D, passos reais ou o AR completo). A câmera não atravessa a ilha.
+- **Andar para se aproximar:** no AR completo (Android/Chrome) você caminha de verdade; no modo câmera, cada passo detectado pelo celular avança ~65 cm (botão "Passos" liga/desliga; ▲ ▼ ◀ ▶ também funcionam e o contador mostra a distância até a Petrobras). Aproximar faz a ilha crescer.
 - **Interação só com a câmera e o toque:** você gira, anda e se aproxima; as ilhas não são movidas nem ampliadas com o dedo. **Tocar numa ilha de tema, de perto,** abre a explicação como um **painel 3D flutuando no espaço**, ao lado da ilha: ele fica ancorado no mundo (ao andar, você chega perto dele), vira-se para você e liga-se ao símbolo por um fio de luz. Tocar no painel (ou longe dele) fecha; se você se afastar muito, ele fecha sozinho.
 
-> **Status: versão 0.4, ainda não testada em aparelho real.** O código foi escrito e a lógica (distribuição das ilhas, tamanho do painel) tem testes automáticos, mas a renderização e os passos precisam ser conferidos num celular. Veja "O que testar primeiro".
+> **Status: versão 0.5, ainda não testada em aparelho real.** O código foi escrito e a lógica (distribuição das ilhas, tamanho do painel) tem testes automáticos, mas a renderização e os passos precisam ser conferidos num celular. Veja "O que testar primeiro".
 
 ## Dois modos de funcionamento
 
