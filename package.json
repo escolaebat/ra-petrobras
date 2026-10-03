@@ -7,6 +7,6 @@
   "scripts": {
     "start": "python3 -m http.server 8080",
     "test": "node tests/logic.test.mjs",
-    "vendor": "bash scripts/vendor.sh"
+    "vendor": "node scripts/vendor.mjs"
   }
 }
