@@ -1,0 +1,12 @@
+{
+  "name": "ebat-ar-ilhas",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Ilhas BR · EBAT — experiência de realidade aumentada no navegador",
+  "scripts": {
+    "start": "python3 -m http.server 8080",
+    "test": "node tests/logic.test.mjs",
+    "vendor": "node scripts/vendor.mjs"
+  }
+}
